@@ -1,15 +1,40 @@
 plugins {
     kotlin("jvm")
-    `maven-publish`
+    id("com.vanniktech.maven.publish") version "0.32.0"
 }
 
-group = "com.compile.sast"
 version = "0.1.0"
 
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            from(components["java"])
+mavenPublishing {
+    coordinates("io.github.adinahhh", "compile-sast-plugin", version.toString())
+    publishToMavenCentral()
+    signAllPublications()
+
+    pom {
+        name.set("compile-sast")
+        description.set(
+            "A proof-of-concept Kotlin K2/FIR compiler plugin exploring compile-time security " +
+                "enforcement - CWE-mapped checks surfaced as native compiler diagnostics via " +
+                "conservative constant analysis, not full taint tracking."
+        )
+        url.set("https://github.com/adinahhh/compile-sast")
+
+        licenses {
+            license {
+                name.set("MIT License")
+                url.set("https://github.com/adinahhh/compile-sast/blob/main/LICENSE")
+            }
+        }
+        developers {
+            developer {
+                id.set("adinahhh")
+                name.set("Adinah Zilton")
+            }
+        }
+        scm {
+            url.set("https://github.com/adinahhh/compile-sast")
+            connection.set("scm:git:git://github.com/adinahhh/compile-sast.git")
+            developerConnection.set("scm:git:ssh://git@github.com/adinahhh/compile-sast.git")
         }
     }
 }

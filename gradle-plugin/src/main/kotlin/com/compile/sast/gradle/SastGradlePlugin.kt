@@ -18,7 +18,7 @@ class SastGradlePlugin : KotlinCompilerPluginSupportPlugin {
     override fun getCompilerPluginId(): String = "com.compile.sast.compiler"
 
     override fun getPluginArtifact(): SubpluginArtifact =
-        SubpluginArtifact(groupId = "com.compile.sast", artifactId = "plugin", version = "0.1.0")
+        SubpluginArtifact(groupId = "io.github.adinahhh", artifactId = "compile-sast-plugin", version = "0.1.0")
 
     override fun applyToCompilation(
         kotlinCompilation: KotlinCompilation<*>

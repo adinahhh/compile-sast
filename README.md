@@ -39,7 +39,7 @@ Checks run inside the compiler's own FIR checker pipeline — the same mechanism
 
 ```
 compile-sast/
-├── plugin/                             # the compiler plugin (published as com.compile.sast:plugin)
+├── plugin/                             # the compiler plugin (published as io.github.adinahhh:compile-sast-plugin)
 │   └── src/main/kotlin/com/compile/sast/
 │       ├── SastCompilerPluginRegistrar.kt
 │       ├── SastFirExtensionRegistrar.kt
@@ -58,7 +58,7 @@ compile-sast/
 │   └── src/test/kotlin/com/compile/sast/
 │       ├── TestHelpers.kt
 │       └── rules/                      # one test class per checker
-├── gradle-plugin/                      # Gradle plugin (com.compile.sast:gradle-plugin)
+├── gradle-plugin/                      # Gradle plugin, applied via plugins { id("com.compile.sast") }
 │   └── src/main/kotlin/com/compile/sast/gradle/
 │       └── SastGradlePlugin.kt         # KotlinCompilerPluginSupportPlugin
 ├── sample-app/                         # demonstration of consumer-facing plugin apply
