@@ -9,10 +9,9 @@ supported - there are no maintained release branches yet.
 ## Reporting a vulnerability
 
 Please report suspected vulnerabilities via a
-[private GitHub security advisory](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability)
-on this repository, rather than a public issue. This is a solo-maintained
-project, so there's no formal SLA, but reports will be acknowledged as soon
-as possible.
+[private security advisory](https://github.com/adinahhh/compile-sast/security/advisories/new),
+rather than a public issue. This is a solo-maintained project, so there's no
+formal SLA, but reports will be acknowledged as soon as possible.
 
 ## Scope
 
