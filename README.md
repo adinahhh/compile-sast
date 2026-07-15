@@ -1,6 +1,6 @@
 # compile-sast: a security-aware Kotlin compiler plugin
 
-A Kotlin **K2/FIR compiler plugin** that turns security checks into real compiler diagnostics. Findings appear as `kotlinc`/Gradle `warning:`/`error:` lines during local compilation — not in a separate scanner pass, and not only after a PR reaches CI.
+A Kotlin **K2/FIR compiler plugin** exploring compile-time security enforcement: a proof-of-concept, not a full SAST replacement. CWE-mapped findings surface as real compiler diagnostics: `kotlinc`/Gradle `warning:`/`error:` lines during local compilation, not in a separate scanner pass and not only after a PR reaches CI.
 
 Each rule uses the compiler's own resolved FIR tree (real call/type resolution, constant evaluation) rather than matching on raw source text.
 
@@ -33,7 +33,7 @@ Kotlin source
   -> kotlinc / Gradle build output     ERROR severity fails the build
 ```
 
-Checks run inside the compiler's own FIR checker pipeline — the same mechanism used for unresolved-reference errors. There is no separate scanner or side-channel.
+Checks run inside the compiler's own FIR checker pipeline, the same mechanism used for unresolved-reference errors. There is no separate scanner or side-channel.
 
 ## Project layout
 

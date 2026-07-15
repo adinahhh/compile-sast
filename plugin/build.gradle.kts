@@ -14,7 +14,7 @@ mavenPublishing {
         name.set("compile-sast")
         description.set(
             "A proof-of-concept Kotlin K2/FIR compiler plugin exploring compile-time security " +
-                "enforcement - CWE-mapped checks surfaced as native compiler diagnostics via " +
+                "enforcement. CWE-mapped checks surfaced as native compiler diagnostics via " +
                 "conservative constant analysis, not full taint tracking."
         )
         url.set("https://github.com/adinahhh/compile-sast")
