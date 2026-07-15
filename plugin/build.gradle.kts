@@ -1,3 +1,5 @@
+import com.vanniktech.maven.publish.SonatypeHost
+
 plugins {
     kotlin("jvm")
     id("com.vanniktech.maven.publish") version "0.32.0"
@@ -7,7 +9,7 @@ version = "0.1.0"
 
 mavenPublishing {
     coordinates("io.github.adinahhh", "compile-sast-plugin", version.toString())
-    publishToMavenCentral()
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
     signAllPublications()
 
     pom {
