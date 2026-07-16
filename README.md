@@ -88,8 +88,6 @@ compile-sast/
 ## Roadmap
 
 - Per-rule configuration (severity overrides, enable/disable) via `CommandLineProcessor` for `-P` options
-- Publish to Maven Central and Gradle Plugin Portal
-- `SECURITY.md` and signed releases
 
 ## License
 
