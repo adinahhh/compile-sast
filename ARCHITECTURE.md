@@ -85,7 +85,7 @@ Known limitations:
 
 ```kotlin
 plugins {
-    id("com.compile.sast") version "0.1.0"
+    id("io.github.adinahhh.compile-sast") version "0.1.0"
 }
 ```
 

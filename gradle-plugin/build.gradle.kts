@@ -1,3 +1,5 @@
+import org.gradle.plugin.compatibility.compatibility
+
 plugins {
     kotlin("jvm")
     `java-gradle-plugin`
@@ -5,6 +7,7 @@ plugins {
     id("com.gradle.plugin-publish") version "2.1.1"
 }
 
+group = "io.github.adinahhh"
 version = "0.1.0"
 
 dependencies {
@@ -27,12 +30,18 @@ gradlePlugin {
 
     plugins {
         create("sast") {
-            id = "com.compile.sast"
+            id = "io.github.adinahhh.compile-sast"
             implementationClass = "com.compile.sast.gradle.SastGradlePlugin"
             displayName = "compile-sast"
             description = "Wires the compile-sast K2 compiler plugin into Kotlin compilation - " +
                 "CWE-mapped security checks surfaced as native compiler diagnostics."
             tags.set(listOf("kotlin", "security", "static-analysis", "compiler-plugin"))
+
+            compatibility {
+                features {
+                    configurationCache = true
+                }
+            }
         }
     }
 }

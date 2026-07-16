@@ -58,7 +58,7 @@ compile-sast/
 │   └── src/test/kotlin/com/compile/sast/
 │       ├── TestHelpers.kt
 │       └── rules/                      # one test class per checker
-├── gradle-plugin/                      # Gradle plugin, applied via plugins { id("com.compile.sast") }
+├── gradle-plugin/                      # Gradle plugin, applied via plugins { id("io.github.adinahhh.compile-sast") }
 │   └── src/main/kotlin/com/compile/sast/gradle/
 │       └── SastGradlePlugin.kt         # KotlinCompilerPluginSupportPlugin
 ├── sample-app/                         # demonstration of consumer-facing plugin apply
@@ -78,7 +78,7 @@ compile-sast/
 ./gradlew :sample-app:compileKotlin
 ```
 
-`sample-app` applies the plugin via `plugins { id("com.compile.sast") version "0.1.0" }` — no `-Xplugin` hand-wiring. The build fails with SAST001/SAST002 errors from `VulnerableSamples.kt`.
+`sample-app` applies the plugin via `plugins { id("io.github.adinahhh.compile-sast") version "0.1.0" }` — no `-Xplugin` hand-wiring. The build fails with SAST001/SAST002 errors from `VulnerableSamples.kt`.
 
 ## Requirements
 

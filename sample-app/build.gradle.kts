@@ -1,6 +1,6 @@
 plugins {
     kotlin("jvm")
-    id("com.compile.sast") version "0.1.0"
+    id("io.github.adinahhh.compile-sast") version "0.1.0"
 }
 
 group = "com.compile.sast.sample"
