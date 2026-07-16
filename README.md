@@ -1,8 +1,15 @@
+![CI](https://github.com/adinahhh/compile-sast/actions/workflows/ci.yml/badge.svg)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.adinahhh/compile-sast-plugin)](https://central.sonatype.com/artifact/io.github.adinahhh/compile-sast-plugin)
+[![Gradle Plugin Portal](https://img.shields.io/gradle-plugin-portal/v/io.github.adinahhh.compile-sast)](https://plugins.gradle.org/plugin/io.github.adinahhh.compile-sast)
+
 # compile-sast: a security-aware Kotlin compiler plugin
 
 A Kotlin **K2/FIR compiler plugin** exploring compile-time security enforcement: a proof-of-concept, not a full SAST replacement. CWE-mapped findings surface as real compiler diagnostics: `kotlinc`/Gradle `warning:`/`error:` lines during local compilation, not in a separate scanner pass and not only after a PR reaches CI.
 
 Each rule uses the compiler's own resolved FIR tree (real call/type resolution, constant evaluation) rather than matching on raw source text.
+
+## Demo
+![Demo](compile-sast-demo.gif)
 
 ## Rules
 
@@ -67,7 +74,7 @@ compile-sast/
 └── settings.gradle.kts
 ```
 
-## Building and running
+## Building and running sample app
 
 ```bash
 # run the test suite (compiles real snippets through the plugin)
@@ -79,6 +86,23 @@ compile-sast/
 ```
 
 `sample-app` applies the plugin via `plugins { id("io.github.adinahhh.compile-sast") version "0.1.0" }` with no `-Xplugin` hand-wiring. The build fails with SAST001/SAST002 errors from `VulnerableSamples.kt`.
+
+## Adding compile-sast in your project
+
+Add the Gradle plugin and make sure `mavenCentral()` is in your repositories:
+
+```kotlin
+plugins {
+    kotlin("jvm") version "2.1.10"
+    id("io.github.adinahhh.compile-sast") version "0.1.0"
+}
+
+repositories {
+    mavenCentral()
+}
+```
+
+Your project's Kotlin version must match exactly, see Requirements below.
 
 ## Requirements
 

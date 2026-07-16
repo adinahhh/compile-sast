@@ -30,7 +30,9 @@ Remove the vulnerable classes from that file (or comment them out) and the build
 
 ## Using this in another project
 
-There's no published Gradle plugin yet (see Roadmap in [README.md](README.md)). For now, wire the plugin jar in directly, the same way `sample-app/build.gradle.kts` does:
+See "Adding compile-sast in your project" in [README.md](README.md) for the normal path: apply `id("io.github.adinahhh.compile-sast") version "0.1.0"`, published on the Gradle Plugin Portal and Maven Central, no `-Xplugin` hand-wiring needed.
+
+If you're working against a local, unpublished build of `:plugin` instead (e.g. testing a change to a checker), wire the jar in directly the same way `sample-app/build.gradle.kts` did before publishing:
 
 ```kotlin
 val pluginJar = project(":plugin").tasks.named<Jar>("jar")
