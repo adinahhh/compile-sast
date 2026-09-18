@@ -70,6 +70,8 @@ compile-sast/
 │       └── SastGradlePlugin.kt         # KotlinCompilerPluginSupportPlugin
 ├── sample-app/                         # demonstration of consumer-facing plugin apply
 │   └── src/main/kotlin/com/compile/sast/sample/VulnerableSamples.kt
+├── talks/                              # conference talk slides and materials
+│   └── bsides-houston-2026/
 ├── build.gradle.kts
 └── settings.gradle.kts
 ```
@@ -112,6 +114,10 @@ Your project's Kotlin version must match exactly, see Requirements below.
 ## Roadmap
 
 - Per-rule configuration (severity overrides, enable/disable) via `CommandLineProcessor` for `-P` options
+
+## Talks
+
+- **Vulnerabilities as build failures, not CI failures** — BSides Houston, September 17, 2026 ([slides](talks/bsides-houston-2026/))
 
 ## License
 
